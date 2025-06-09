@@ -8,13 +8,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
+    <!-- Add EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        emailjs.init("Sm9HPaiHm8wnb5dbB");
+      })();
+    </script>
   </head>
   <body>
     <!-- Navigation -->
@@ -58,7 +65,7 @@
           </div>
           <div class="hero-image">
             <img
-              src="WhatsApp Image 2025-06-09 at 00.18.45_b75ed02d.jpg"
+              src="assets/images/WhatsApp Image 2025-06-09 at 00.18.45_b75ed02d.jpg"
               alt="Profile"
               class="profile-img"
             />
@@ -137,7 +144,7 @@
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-content">
-              <h3>Data Science Program</h3>
+              <h3>BS Data Science</h3>
               <h4>PUCIT - Current (2nd Semester)</h4>
               <p>
                 Pursuing comprehensive education in data science fundamentals,
@@ -190,81 +197,159 @@
     <section id="projects" class="section">
       <div class="container">
         <h2 class="section-title">Projects & Work</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fas fa-chart-area"></i>
-            </div>
-            <div class="project-content">
-              <h3>Statistical Analysis Dashboard</h3>
-              <p>
-                Interactive data visualization dashboard built with Python,
-                showcasing statistical analysis techniques learned in
-                coursework. Features dynamic charts and real-time data
-                processing.
+        
+        <!-- Featured Project Banner -->
+        <div class="featured-project">
+          <div class="featured-content">
+            <div class="featured-text">
+              <div class="featured-badge">🌟 Featured Project</div>
+              <h3>Student Schedule Impact Statistical Analysis</h3>
+              <p class="featured-description">
+                Comprehensive statistical research analyzing how different scheduling styles (Fixed, Flexible, Hybrid) 
+                affect student productivity, satisfaction, and well-being. Surveyed 150+ students and applied rigorous 
+                statistical testing to uncover actionable insights for academic institutions.
               </p>
-              <div class="project-tags">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">Matplotlib</span>
-                <span class="tag">NumPy</span>
+              <div class="featured-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-users"></i>
+                  <span>150+ Students Surveyed</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-chart-line"></i>
+                  <span>5 Hypothesis Tests</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Significant Findings</span>
+                </div>
               </div>
-              <div class="project-links">
-                <a href="#"
-                  ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                >
-                <a href="#"><i class="fab fa-github"></i> Source Code</a>
+              <div class="featured-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Statistical Testing</span>
+                <span class="tech-tag">Data Visualization</span>
+                <span class="tech-tag">Survey Analysis</span>
+              </div>
+              <div class="featured-links">
+                <a href="https://github.com/ZohaibCodez/schedule-impact-statistical-analysis" class="btn btn-primary" target="_blank">
+                  <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="https://colab.research.google.com/drive/1tBq3Fz_Gdtlv7m1dR8UO_ghKibDGo2-m?usp=sharing" class="btn btn-secondary" target="_blank">
+                  <i class="fas fa-play"></i> Open in Colab
+                </a>
+              </div>
+            </div>
+            <div class="featured-visual">
+              <div class="stats-preview">
+                <div class="stat-item">
+                  <div class="stat-number">2</div>
+                  <div class="stat-label">Significant Results</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">0.0012</div>
+                  <div class="stat-label">Best P-Value</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">T-Test</div>
+                  <div class="stat-label">Primary Method</div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
+        <!-- Other Projects Grid -->
+        <div class="projects-grid">
           <div class="project-card">
             <div class="project-image">
               <i class="fas fa-robot"></i>
             </div>
             <div class="project-content">
-              <h3>AI Data Analysis Agent</h3>
+              <h3>Panaverse Agent App</h3>
               <p>
-                Intelligent agent system that automatically processes datasets,
-                generates insights, and creates reports. Built using OpenAI SDK
-                with focus on autonomous data exploration.
+                Conversational AI agent built with OpenAI tools, Chainlit, and FastAPI to support 
+                intelligent workflows. Features natural language processing capabilities and 
+                automated task execution for enhanced productivity.
               </p>
               <div class="project-tags">
                 <span class="tag">OpenAI SDK</span>
-                <span class="tag">Python</span>
+                <span class="tag">Chainlit</span>
+                <span class="tag">FastAPI</span>
                 <span class="tag">AI Agents</span>
-                <span class="tag">Automation</span>
               </div>
               <div class="project-links">
-                <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
-                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://github.com/ZohaibCodez/panaverse-agent-app" target="_blank">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
               </div>
             </div>
           </div>
 
           <div class="project-card">
             <div class="project-image">
-              <i class="fas fa-database"></i>
+              <i class="fas fa-code"></i>
             </div>
             <div class="project-content">
-              <h3>Data Processing Pipeline</h3>
+              <h3>Custom String Implementation</h3>
               <p>
-                Efficient data processing pipeline for handling large datasets.
-                Implements advanced pandas operations and NumPy optimizations
-                for statistical computations and data transformations.
+                Complete recreation of std::string in C++ with advanced memory management 
+                and operator overloading. Demonstrates deep understanding of system-level 
+                programming and efficient resource handling.
               </p>
               <div class="project-tags">
-                <span class="tag">Pandas</span>
-                <span class="tag">NumPy</span>
-                <span class="tag">Data Pipeline</span>
-                <span class="tag">Statistics</span>
+                <span class="tag">C++</span>
+                <span class="tag">Memory Management</span>
+                <span class="tag">OOP</span>
+                <span class="tag">System Programming</span>
               </div>
               <div class="project-links">
-                <a href="#"
-                  ><i class="fas fa-external-link-alt"></i> View Project</a
-                >
-                <a href="#"><i class="fab fa-github"></i> Repository</a>
+                <a href="https://github.com/ZohaibCodez/text-string-clone" target="_blank">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
               </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="project-content">
+              <h3>Tic-Tac-Toe in C++</h3>
+              <p>
+                Command-line implementation of the classic game featuring clean object-oriented 
+                design, game state management, and user interaction handling. Showcases 
+                fundamental programming concepts and algorithm implementation.
+              </p>
+              <div class="project-tags">
+                <span class="tag">C++</span>
+                <span class="tag">OOP Design</span>
+                <span class="tag">Game Logic</span>
+                <span class="tag">Algorithms</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ZohaibCodez/Tic-Tac-Toe-CPP" target="_blank">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming Soon Section -->
+        <div class="coming-soon">
+          <h3>🚀 Currently Working On</h3>
+          <div class="upcoming-projects">
+            <div class="upcoming-item">
+              <i class="fas fa-chart-area"></i>
+              <span>Interactive Data Visualization Dashboard</span>
+            </div>
+            <div class="upcoming-item">
+              <i class="fas fa-brain"></i>
+              <span>Machine Learning Model Deployment</span>
+            </div>
+            <div class="upcoming-item">
+              <i class="fas fa-api"></i>
+              <span>FastAPI Data Science Backend</span>
             </div>
           </div>
         </div>
@@ -347,6 +432,6 @@
       <i class="fas fa-moon"></i>
     </button>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

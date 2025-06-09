@@ -60,24 +60,49 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         
-        // Simulate form submission (replace with actual form submission)
-        setTimeout(() => {
-            // Show success message
-            const successMessage = document.createElement('div');
-            successMessage.className = 'success-message';
-            successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
-            this.appendChild(successMessage);
-            
-            // Reset form
-            this.reset();
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Send Message';
-            
-            // Remove success message after 3 seconds
-            setTimeout(() => {
-                successMessage.remove();
-            }, 3000);
-        }, 1500);
+        // Prepare email parameters
+        const templateParams = {
+            from_name: name.value.trim(),
+            from_email: email.value.trim(),
+            subject: subject.value.trim(),
+            message: message.value.trim(),
+            to_email: 'itxlevicodez@gmail.com'
+        };
+
+        // Send email using EmailJS
+        emailjs.send('service_ly560m6', 'template_vqg1fjn', templateParams)
+            .then(function(response) {
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
+                document.querySelector('.contact-form').appendChild(successMessage);
+                
+                // Reset form
+                document.querySelector('.contact-form').reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message';
+                
+                // Remove success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 3000);
+            })
+            .catch(function(error) {
+                // Show error message
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed to send message. Please try again.';
+                document.querySelector('.contact-form').appendChild(errorMessage);
+                
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message';
+                
+                // Remove error message after 3 seconds
+                setTimeout(() => {
+                    errorMessage.remove();
+                }, 3000);
+            });
     }
 });
 
